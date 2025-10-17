@@ -1,25 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Baumans&family=Bowlby+One&family=Bruno+Ace&family=Bungee+Shade&family=Cabin:wght@500&family=Chewy&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Emblema+One&family=Gabarito:wght@400..900&family=Hammersmith+One&family=Itim&family=Limelight&family=Monoton&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Mystery+Quest&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poller+One&family=Racing+Sans+One&family=Ramabhadra&family=Ranchers&family=Roboto:ital,wght@1,800&family=Russo+One&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 .pure-g {
+    max-width: 500px;
     box-sizing: border-box;
-    text-rendering: optimizespeed;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    margin: -8px;
+    margin: -8px auto;
+    width: 100%;
 }
 
 .background-container {
-    width: 100vw;
+    width: 100%;
     aspect-ratio: 1 / 1;
 
     background-image: url('../images/background1.jpeg');
