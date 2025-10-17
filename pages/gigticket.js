@@ -15,6 +15,8 @@ var currentElement;
 var relatedElement;
 var currentTemplate = 1;
 var dateWarningShown = false;
+var storeOnComplete = false;
+var clearOnComplete = true;
 
 // Limit support/other info font size to be smaller than main band name
 const ticketBandNames = document.querySelectorAll('p[id*="ticket-band-"]');
@@ -221,6 +223,21 @@ function changeTemplate(i) {
     document.getElementById('font-dropdown').style.display = (currentTemplate === 6 ? 'none' : 'block');
 
     dispatchEvents();
+    setOverrideData()
+}
+
+function setOverrideData() {
+    const ticketFields = ['ticket-promoter-','ticket-band-name-','ticket-band-other-','ticket-date-time-',
+                          'ticket-doors-','ticket-venue-','ticket-address-','ticket-type-','ticket-price-'];
+    
+    for (const field of ticketFields) {
+        const element = document.getElementById(field + currentTemplate);
+        if (element !== null) {
+            if (element.getAttribute('data-font-size') !== null) {
+                element.style.fontSize = element.getAttribute('data-font-size');
+            }
+        }
+    }
 }
 
 function swapBackground(index) {
@@ -232,6 +249,11 @@ function fitText(element, maxFontSize) {
         maxFontSize = 20;
     }
     element.style.fontSize = `${maxFontSize}pt`;
+    if (storeOnComplete) {
+        element.setAttribute('data-font-size', `${maxFontSize}pt`);
+    } else if (clearOnComplete) {
+        element.removeAttribute('data-font-size');
+    }
     requestAnimationFrame(() => shrinkStep(element, maxFontSize));
 }
 
@@ -245,6 +267,11 @@ function shrinkStep(element, currentSize) {
     while (element.scrollWidth > container.clientWidth-correction && currentSize > 1) {
         currentSize--;
         element.style.fontSize = `${currentSize}pt`;
+        if (storeOnComplete) {
+            element.setAttribute('data-font-size', `${currentSize}pt`);
+        } else if (clearOnComplete) {
+            element.removeAttribute('data-font-size');
+        }
         requestAnimationFrame(() => shrinkStep(element, currentSize));
     }
 }
@@ -260,6 +287,7 @@ function setFontAndResize(id) {
 function setRelatedFontAndSize(id) {
     relatedElement.style.fontFamily = window.getComputedStyle(document.getElementById(id)).fontFamily;
     relatedElement.style.fontSize = currentElement.style.fontSize;
+    if (storeOnComplete) relatedElement.setAttribute('data-font-size', currentElement.style.fontSize);
 }
 
 function getFontSizeVal(element) {
@@ -373,11 +401,14 @@ function showSettings(settingsField, maxFontSize, relatedField = null) {
     let opacity = currentElement.style.opacity;
     document.getElementById('fade').value = (opacity < 0.1 ? 80 : currentElement.style.opacity * 100);
     document.getElementById('settings').style.display = 'flex';
+    
+    storeOnComplete = true;
     return false;
 }
 
 function closeModal(id) {
     document.getElementById(id).style.display = 'none';
+    storeOnComplete = false;
     return true;
 }
 
@@ -412,6 +443,7 @@ function setPresets(gigId) {
 function dispatchEvents() {
     var e = new Event('input');
     var e2 = new Event('change');
+    clearOnComplete = false;
     if (promoter.value.length > 0) promoter.dispatchEvent(e);
     if (bandName.value.length > 0) bandName.dispatchEvent(e);
     if (bandOther.value.length > 0) bandOther.dispatchEvent(e);
@@ -420,6 +452,7 @@ function dispatchEvents() {
     gigDateTime.dispatchEvent(e);
     typeSelect.dispatchEvent(e2);
     if (price.value.length > 0) price.dispatchEvent(e);
+    clearOnComplete = true;
 }
 
 function getRandomLetter(start, max) {
