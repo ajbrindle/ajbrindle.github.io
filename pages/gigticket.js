@@ -170,7 +170,10 @@ typeSelect.addEventListener('change', function() {
           typeValue += ' - Row ' + getRandomLetter(3, 25) + ', Seat ' + getRandomNumber(250);                  
       }
   }
-  document.getElementById('ticket-type-' + currentTemplate).innerHTML = typeValue;
+  
+  const element = document.getElementById('ticket-type-' + currentTemplate);
+  element.innerHTML = typeValue;
+  fitText(element, 24);
 });
 
 sizeSlider.addEventListener('input', function() {
