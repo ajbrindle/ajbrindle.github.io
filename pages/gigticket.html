@@ -1,0 +1,271 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="gigticket.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://kit.fontawesome.com/4cc8e61ca1.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>Souvenir Ticket Generator</title>
+<div class="pure-g">
+    <div id="full-ticket" class="background-container">
+        <div id="content-box-1" class="content-box-1 content-box-no-after">
+            <p id="ticket-promoter-1" class="ticket-detail content-box-p"></p>
+            <p id="ticket-band-name-1" class="band-name content-box-p" style="margin-top:12px;font-size:24pt">Band Name</p>
+            <p id="ticket-band-other-1" class="band-other content-box-p" style="margin-top:5px;margin-bottom:20px;font-size:16pt">Other Act Info</p>
+            <p id="ticket-date-time-1" class="ticket-detail content-box-p">Thursday 11th December 2025</p>
+            <p id="ticket-doors-1" class="ticket-detail content-box-p" style="font-weight:300;">Doors 7:30pm</p>
+            <p id="ticket-venue-1" class="venue content-box-p" style="margin-top:12px;font-size:22pt">Venue</p>
+            <p id="ticket-address-1" class="ticket-detail content-box-p" style="margin-bottom:12px;">Venue Address</p>
+            <p id="ticket-type-1" class="ticket-detail content-box-p" style="margin-bottom:10px;">Ticket Type</p>
+        </div>
+        <div id="content-box-2" class="content-box-2 content-box-no-after" style="display:none;">
+            <div style="height:15%;max-height:15%;min-height:15%;width:100%;margin-bottom:10px;overflow:none;">
+                <p id="ticket-venue-2" class="venue content-box-p" style="font-size:32pt">Venue</p>
+            </div>
+            <p id="ticket-promoter-2" class="ticket-detail content-box-p"></p>
+            <p id="ticket-band-name-2" class="band-name content-box-p" style="font-size:34pt">Band Name</p>
+            <p id="ticket-band-other-2" class="band-other content-box-p" style="margin-bottom:5px;font-size:20pt">Other Act Info</p>
+            <p id="ticket-date-time-2" class="ticket-detail content-box-p">Thursday 11th December 2025</p>
+            <p id="ticket-doors-2" class="ticket-detail content-box-p" style="font-weight:300;">Doors 7:30pm</p>
+            <p id="ticket-type-2" class="ticket-detail content-box-p" style="margin-top:10px;margin-bottom:10px;">Ticket Type</p>
+            <p id="ticket-price-2" class="ticket-detail content-box-p" style="font-size:16pt">£88.88</p>
+        </div>
+        <div id="content-box-3" class="content-box-3 content-box-no-after" style="display:none;">
+            <div id="inner-content-box-3" style="margin-left:7px;height:15%;max-height:15%;min-height:15%;width:75%;margin-bottom:10px;overflow:none;">
+                <p id="ticket-venue-3" class="venue content-box-p" style="font-size:28pt">Venue</p>
+                <p id="ticket-address-3" class="venue content-box-p" style="font-size:16pt;margin-top:-5px">Address</p>
+            </div>
+            <p id="ticket-promoter-3" class="ticket-detail content-box-p"></p>
+            <p id="ticket-band-name-3" class="band-name content-box-p" style="font-size:34pt">Band Name</p>
+            <p id="ticket-band-other-3" class="band-other content-box-p" style="margin-bottom:5px;font-size:20pt">Other Act Info</p>
+            <p id="ticket-date-time-3" class="ticket-detail content-box-p">Thursday 11th December 2025</p>
+            <p id="ticket-doors-3" class="ticket-detail content-box-p" style="font-weight:300;">Doors 7:30pm</p>
+            <p id="ticket-type-3" class="ticket-detail content-box-p" style="margin-top:10px;margin-bottom:8px;">Ticket Type</p>
+            <p id="ticket-price-3" class="ticket-detail content-box-p" style="font-size:16pt">£88.88</p>
+        </div>
+        <div id="content-box-4" class="content-box-4 content-box-no-after" style="display:none;">
+            <div id="inner-content-box-4" style="display:flex;height:10%;max-height:10%;min-height:10%;width:95%;margin-bottom:10px;overflow:none;justify-content:center;">
+                <p id="ticket-venue-4" class="venue content-box-p" style="font-size:22pt;text-align:center;">Venue</p>
+            </div>
+            <p id="ticket-promoter-4" class="ticket-detail content-box-p" style="color:#ff0000;"></p>
+            <p id="ticket-band-name-4" class="band-name content-box-p" style="font-size:34pt;margin-top:8px;color:#ff0000;">Band Name</p>
+            <p id="ticket-band-other-4" class="band-other content-box-p" style="margin-bottom:10px;font-size:20pt;color:#ff0000;">Other Act Info</p>
+            <p id="ticket-date-time-4" class="ticket-detail content-box-p" style="color:#ff0000;">Thursday 11th December 2025</p>
+            <p id="ticket-doors-4" class="ticket-detail content-box-p" style="font-weight:300;color:#ff0000;">Doors 7:30pm</p>
+            <p id="ticket-price-4" class="ticket-detail content-box-p" style="color:#ff0000;font-size:16pt">£88.88</p>
+            <p id="ticket-type-4" class="ticket-detail content-box-p" style="margin-top:20px;margin-left:auto;margin-right:0;text-align:right;">Ticket Type</p>
+        </div>
+        <div id="content-box-5" class="content-box-5 content-box-no-after" style="display:none;">
+            <div id="inner-content-box-5" style="width:100%;margin-left:1px;height:15%;max-height:15%;min-height:15%;margin-bottom:17px;overflow:none;">
+                <p id="ticket-venue-5" class="venue content-box-p" style="font-size:18pt">Venue</p>
+                <p id="ticket-address-5" class="venue content-box-p" style="font-size:12pt;margin-top:-5px">Address</p>
+            </div>
+            <p id="ticket-promoter-5" class="ticket-detail content-box-p"></p>
+            <p id="ticket-band-name-5" class="band-name content-box-p" style="font-size:34pt;margin-top:10px">Band Name</p>
+            <p id="ticket-band-other-5" class="band-other content-box-p" style="font-size:20pt">Other Act Info</p>
+            <p id="ticket-date-time-5" class="ticket-detail content-box-p" style="margin-top:10px;">Thursday 11th December 2025</p>
+            <p id="ticket-doors-5" class="ticket-detail content-box-p" style="font-weight:300;">Doors 7:30pm</p>
+            <p id="ticket-type-5" class="ticket-detail content-box-p" style="margin-top:10px;margin-bottom:10px;">Ticket Type</p>
+            <p id="ticket-price-5" class="ticket-detail content-box-p" style="font-size:16pt">£88.88</p>
+        </div>
+        <div id="content-box-6" class="content-box-6 content-box-no-after" style="display:none;">
+            <p id="ticket-date-time-6" class="fac51">Thursday 11th December 2025</p>
+            <p id="ticket-doors-6" class="fac51" style="display:none;"></p>
+            <p id="ticket-price-6" class="fac51" style="">£5.00</p>
+            <p id="ticket-band-name-6" class="fac51" style="">Band Name</p>
+            <p id="ticket-band-other-6" class="fac51" style="display:none;"></p>
+            <p id="ticket-type-6" class="fac51" style="display:none;"></p>
+        </div>
+        <img id="ticket-fee" class="booking-fee" src="../images/bookingfee.png">
+        <img id="not-ticket" class="watermark" src="../images/watermark.png">
+    </div>
+    <div id="inputs" style="position:relative;">
+        <div style="position:absolute;x:0;y:0">
+            <form name="ticketForm" action="javascript:void(0)">
+                <table style="width:100%;table-layout:fixed;border-collapse:collapse;">
+                    <tr>
+                        <td><label>Style</label></td>
+                        <td colspan="2"><button id="style1" class="ticket-button" style="background-image:url('../images/template-thumbs/background1.jpeg');" onclick="changeTemplate(1)">1</button>
+                            <button id="style2" class="ticket-button" style="background-image:url('../images/template-thumbs/background2.jpeg');" onclick="changeTemplate(2)">2</button>
+                            <button id="style3" class="ticket-button" style="background-image:url('../images/template-thumbs/background3.jpeg');" onclick="changeTemplate(3)">3</button>
+                            <button id="style4" class="ticket-button" style="background-image:url('../images/template-thumbs/background4.jpeg');" onclick="changeTemplate(4)">4</button>
+                            <button id="style5" class="ticket-button" style="background-image:url('../images/template-thumbs/background5.jpeg');" onclick="changeTemplate(5)">5</button>
+                            <button id="style6" class="ticket-button" style="background-image:url('../images/template-thumbs/background6.jpeg');" onclick="changeTemplate(6)">6</button>
+                        </td>
+                    </tr>
+                    <tr id="hue-chooser">
+                        <td class="td-col1"><label  >Colour</label></td>
+                        <td colspan="2">
+                            <button id="colour1" class="ticket-button" style="background-image:url('../images/template-thumbs/background1.jpeg');" onclick="swapBackground('')">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button id="colour2" class="ticket-button" style="background-image:url('../images/template-thumbs/background1b.jpeg');" onclick="swapBackground('b')">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button id="colour3" class="ticket-button" style="background-image:url('../images/template-thumbs/background1c.jpeg');" onclick="swapBackground('c')">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                            <button id="colour4" class="ticket-button" style="background-image:url('../images/template-thumbs/background1d.jpeg');" onclick="swapBackground('d')">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom:solid;border-width:5px;border-bottom-color:#3e454a">
+                        <td class="td-col1" style="padding-bottom:15px;"><label for="gig-select">Presets</label></td>
+                        <td class="td-col2" style="padding-bottom:15px;">
+                            <select name="gig" id="gig-select" class="ticket-choice">
+                                <option value="none">--Please choose a gig--</option>
+                                <option value="soundsofthecity2025">Castlefield Bowl, 3/7/25</option>
+                                <option value="leeds2025">O2 Academy Leeds, 6/12/25</option>
+                                <option value="stoke2025">Victoria Hall, Stoke, 7/12/25</option>
+                                <option value="bath2025">Bath Forum, Bath, 10/12/25</option>
+                                <option value="london2025">Roundhouse London, 10/12/25</option>
+                                <option value="manchester2025">Manchester Academy, 11/12/25</option>
+                                <option value="glasgow2025">Glasgow Barrowland, 12/12/25</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr><td style="padding-top:10px;"></td></tr>
+                    <tr id="promoter-row">
+                        <td class="td-col1"><label>Promoter</label></td>
+                        <td class="td-col2"><input id="promoter" name="promoter" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="promoter-settings" onclick="showSettings('ticket-promoter', 24)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr>
+                        <td class="td-col1"><label>Band Name</label></td>
+                        <td class="td-col2"><input id="band-name" name="band-name" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="band-settings" onclick="showSettings('ticket-band-name', 64)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr id="support-row">
+                        <td class="td-col1"><label>Support/Tour</label></td>
+                        <td class="td-col2"><input id="band-other" name="band-other" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="other-settings" onclick="showSettings('ticket-band-other', 48)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr id="venue-row">
+                        <td class="td-col1"><label>Venue</label></td>
+                        <td class="td-col2"><input id="venue" name="venue" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="venue-settings" onclick="showSettings('ticket-venue', 64)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr id="address-row">
+                        <td class="td-col1"><label>Venue Address</label></td>
+                        <td class="td-col2"><input id="venue-address" name="venue-address" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="address-settings" onclick="showSettings('ticket-address', 32)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr>
+                        <td class="td-col1"><label>Date/Time</label></td>
+                        <td class="td-col2"><input id="gig-date-time" type="datetime-local" class="text-input" name="gig-date-time" value="2025-01-01T19:30" /></td>
+                        <td class="td-col3"><button id="dt-settings" onclick="showSettings('ticket-date-time', 20, 'ticket-doors')"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr id="show-doors-row">
+                        <td class="td-col1"><label>Show Doors</label></td>
+                        <td class="td-col2"><input type="checkbox" name="show-doors" id="show-doors" onchange="showDoors(this)" checked/></td>
+                        <td class="td-col3"></td>
+                    </tr>
+                    <tr id="price-row" hidden="">
+                        <td class="td-col1"><label>Price</label></td>
+                        <td class="td-col2"><input id="price" name="price" type="text" class="text-input"></td>
+                        <td class="td-col3"><button id="price-settings" onclick="showSettings('ticket-price', 24)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <tr id="booking-fee-row">
+                        <td class="td-col1"><label>Booking Fee</label></td>
+                        <td class="td-col2"><input type="checkbox" name="show-booking-fee" id="show-booking-fee" onchange="showBookingFee(this)"/></td>
+                        <td class="td-col3"></td>
+                    </tr>
+                    <tr id="type-row">
+                        <td class="td-col1"><label for="type-select">Ticket Type</label></td>
+                        <td class="td-col2">
+                            <select name="ticket-type" id="type-select" class="ticket-choice">
+                                <option value="none">--None--</option>
+                                <option value="STANDING">STANDING</option>
+                                <option value="SEATING">SEATING</option>
+                                <option value="STALLS">STALLS</option>
+                                <option value="GENERAL ADMISSION">GENERAL ADMISSION</option>
+                                <option value="UNRESERVED">UNRESERVED</option>
+                            </select>
+                        </td>
+                        <td class="td-col3"><button id="type-settings" onclick="showSettings('ticket-type', 24)"><i class="fa-solid fa-gear"> </i></button></td>
+                    </tr>
+                    <!--tr>
+                        <td><label>Vintage look</label></td>
+                        <td><input type="checkbox" name="do-age" id="do-age" onchange="doAge(this)"/></td>
+                    </tr-->
+                </table>
+                <button id="download-button" style="margin-top:25px;margin-left:5px;margin-bottom:25px;font-size:14pt;">Download to Device</button><br/>
+            </form>
+        </div>
+        <div id="settings" class="modal">
+            <div class="modal-content">
+                <div id="font-dropdown" class="custom-dropdown" style="margin-bottom:10px;">
+                    <label>Font&nbsp;</label>
+                    <button class="dropdown-toggle" id="dropdown-button">Choose Font Style</button>
+
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <div id="font0" class="dropdown-item font0" data-value="font0">AaBbCcDd</div>
+                        <div id="font1" class="dropdown-item font1" data-value="font1">AaBbCcDd</div>
+                        <div id="font2" class="dropdown-item font2" data-value="font2">AaBbCcDd</div>
+                        <div id="font3" class="dropdown-item font3" data-value="font3">AaBbCcDd</div>
+                        <div id="font4" class="dropdown-item font4" data-value="font4">AaBbCcDd</div>
+                        <div id="font5" class="dropdown-item font5" data-value="font5">AaBbCcDd</div>
+                        <div id="font6" class="dropdown-item font6" data-value="font6">AaBbCcDd</div>
+                        <div id="font7" class="dropdown-item font7" data-value="font7">AaBbCcDd</div>
+                        <div id="font8" class="dropdown-item font8" data-value="font8">AaBbCcDd</div>
+                        <div id="font9" class="dropdown-item font9" data-value="font9">AaBbCcDd</div>
+                        <div id="font10" class="dropdown-item font10" data-value="font10">AaBbCcDd</div>
+                        <div id="font11" class="dropdown-item font11" data-value="font11">AaBbCcDd</div>
+                        <div id="font12" class="dropdown-item font12" data-value="font12">AaBbCcDd</div>
+                        <div id="font13" class="dropdown-item font13" data-value="font13">AaBbCcDd</div>
+                        <div id="font14" class="dropdown-item font14" data-value="font14">AaBbCcDd</div>
+                        <div id="font15" class="dropdown-item font15" data-value="font15">AaBbCcDd</div>
+                        <div id="font16" class="dropdown-item font16" data-value="font16">AaBbCcDd</div>
+                        <div id="font17" class="dropdown-item font17" data-value="font17">AaBbCcDd</div>
+                        <div id="font18" class="dropdown-item font18" data-value="font18">AaBbCcDd</div>
+                        <div id="font19" class="dropdown-item font19" data-value="font19">AaBbCcDd</div>
+                        <div id="font20" class="dropdown-item font20" data-value="font20">AaBbCcDd</div>
+                        <div id="font21" class="dropdown-item font21" data-value="font21">AaBbCcDd</div>
+                    </div>
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="size">Size&nbsp;</label>
+                    <input type="range" id="size" name="size" min="10" max="64" style="width:75%;">
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="fade">Fade&nbsp;</label>
+                    <input type="range" id="fade" name="fade" min="30" max="100" style="width:75%;">
+                </div>
+                <div style="margin-bottom:10px;">
+                    <label for="color-picker">Colour&nbsp;</label>
+                    <input type="color" id="color-picker" value="#e66465">
+                </div>
+                <button onclick="closeModal('settings')">Close</button>
+            </div>
+        </div>
+        <div id="date-warning" class="modal">
+            <div class="modal-content">
+                Tickets for future-dated events will be watermarked until the date of the event has passed.&nbsp;
+                After that date, you will be able to return to the app and download a version without the watermark.<br/>
+                <button style="display:block;margin:auto;margin-top:10px" onclick="closeModal('date-warning')">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="data-div" id="soundsofthecity2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="with Embrace and The Coral" data-dt="2025-07-03T17:30" data-venue="Sounds of the City 2025" data-address="Castlefield Bowl, Manchester, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="leeds2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-06T19:30" data-venue="O2 Academy" data-address="Leeds, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="stoke2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-07T19:30" data-venue="Victoria Hall" data-address="Stoke, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="bath2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-08T19:30" data-venue="Bath Forum" data-address="Bath, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="london2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-10T19:30" data-venue="Roundhouse" data-address="London, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="manchester2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-11T19:30" data-venue="Manchester Academy" data-address="Oxford Road, Manchester, UK" data-type="STANDING" data-price="£55.00"></div>
+<div class="data-div" id="glasgow2025-data" data-promoter="SJM Concerts Presents" data-band="the charlatans" data-other="We Are Love Tour 2025" data-dt="2025-12-12T19:30" data-venue="Barrowland Ballroom" data-address="Glasgow, UK" data-type="STANDING" data-price="£55.00"></div>
+<script src="gigticket.js"></script>
+<script>
+    const downloadButton = document.getElementById('download-button');
+    const divToCapture = document.getElementById('full-ticket');
+
+    downloadButton.addEventListener('click', function () {
+      html2canvas(divToCapture, {
+          useCORS: true
+      }).then(canvas => {
+        const imageData = canvas.toDataURL('image/png');
+
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = imageData;
+        link.download = 'ticket.png'; // The name of the downloaded file
+
+        // Programmatically click the link to trigger the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    });
+</script>
