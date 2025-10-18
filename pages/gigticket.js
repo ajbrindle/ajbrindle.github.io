@@ -90,6 +90,7 @@ colorPicker.addEventListener('input', function() {
   if (relatedElement !== null) {
       relatedElement.style.color = selectedColor;
   }
+  setOverrideData(document.getElementById('apply-colour'), colorPicker.value);
 });
 
 promoter.addEventListener('input', function() {
@@ -229,15 +230,19 @@ function changeTemplate(i) {
     setOverrideData()
 }
 
-function setOverrideData() {
+function setOverrideData(checkbox = null, colour = null) {
     const ticketFields = ['ticket-promoter-','ticket-band-name-','ticket-band-other-','ticket-date-time-',
                           'ticket-doors-','ticket-venue-','ticket-address-','ticket-type-','ticket-price-'];
     
     for (const field of ticketFields) {
         const element = document.getElementById(field + currentTemplate);
         if (element !== null) {
-            if (element.getAttribute('data-font-size') !== null) {
-                element.style.fontSize = element.getAttribute('data-font-size');
+            if (checkbox === null) {
+                if (element.getAttribute('data-font-size') !== null) {
+                    element.style.fontSize = element.getAttribute('data-font-size');
+                }
+            } else if (checkbox.checked) {
+                element.style.color = colour;
             }
         }
     }
@@ -404,6 +409,7 @@ function showSettings(settingsField, maxFontSize, relatedField = null) {
     let opacity = currentElement.style.opacity;
     document.getElementById('fade').value = (opacity < 0.1 ? 80 : currentElement.style.opacity * 100);
     document.getElementById('settings').style.display = 'flex';
+    document.getElementById('apply-colour').checked = false;
     
     storeOnComplete = true;
     return false;

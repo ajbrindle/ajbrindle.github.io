@@ -227,6 +227,8 @@
                 <div style="margin-bottom:10px;">
                     <label for="color-picker">Colour&nbsp;</label>
                     <input type="color" id="color-picker" value="#e66465">
+                    <label>&nbsp;&nbsp;Apply to all&nbsp;</label>
+                    <input type="checkbox" name="apply-colour" id="apply-colour" onchange="setOverrideData(this, document.getElementById('color-picker').value)"/>
                 </div>
                 <button onclick="closeModal('settings')">Close</button>
             </div>
