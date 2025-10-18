@@ -11,6 +11,8 @@ const fadeSlider = document.getElementById('fade');
 const colorPicker = document.getElementById('color-picker');
 const colorBox = document.getElementById('chosen-color');
 const gigSelect = document.getElementById('gig-select');
+const downloadButton = document.getElementById('download-button');
+const divToCapture = document.getElementById('full-ticket');
 var currentElement;
 var relatedElement;
 var currentTemplate = 1;
@@ -189,6 +191,24 @@ fadeSlider.addEventListener('input', function() {
     if (relatedElement !== null) {
         requestAnimationFrame(() => relatedElement.style.opacity = currentElement.style.opacity);
     }
+});
+
+downloadButton.addEventListener('click', function () {
+    html2canvas(divToCapture, {
+        useCORS: true
+    }).then(canvas => {
+        const imageData = canvas.toDataURL('image/png');
+
+        // Create a temporary link element
+        const link = document.createElement('a');
+        link.href = imageData;
+        link.download = 'ticket.png'; // The name of the downloaded file
+
+        // Programmatically click the link to trigger the download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
 });
 
 function changeTemplate(i) {
