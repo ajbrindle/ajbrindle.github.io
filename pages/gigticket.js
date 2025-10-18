@@ -209,14 +209,10 @@ function changeTemplate(i) {
     // Show/hide optional fields
     document.getElementById('price-row').hidden = document.getElementById('ticket-price-' + i) === null;
     document.getElementById('address-row').hidden = document.getElementById('ticket-address-' + i) === null;
-    document.getElementById('booking-fee-row').hidden = currentTemplate === 2;
 
     // Specific changes for background 6
     if (currentTemplate === 6) {
         document.getElementById('ticket-band-name-6').style.fontFamily = window.getComputedStyle(document.getElementById('font21')).fontFamily;
-    } else if (currentTemplate === 2) {
-        document.getElementById('ticket-fee').style.display = 'none';
-        document.getElementById('show-booking-fee').checked = false;
     }
     
     document.getElementById('promoter-row').hidden = currentTemplate === 6;
