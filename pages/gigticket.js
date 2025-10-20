@@ -225,6 +225,7 @@ function changeTemplate(i) {
     document.getElementById('colour2').style.backgroundImage = "url('../images/template-thumbs/background" + i + "b.jpeg')";
     document.getElementById('colour3').style.backgroundImage = "url('../images/template-thumbs/background" + i + "c.jpeg')";
     document.getElementById('colour4').style.backgroundImage = "url('../images/template-thumbs/background" + i + "d.jpeg')";
+    document.getElementById('colour5').style.backgroundImage = "url('../images/template-thumbs/background" + i + "e.jpeg')";
 
     // Show/hide optional fields
     document.getElementById('price-row').hidden = document.getElementById('ticket-price-' + i) === null;
