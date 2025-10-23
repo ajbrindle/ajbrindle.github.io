@@ -140,7 +140,7 @@ price.addEventListener('input', function() {
     let element = document.getElementById('ticket-price-' + currentTemplate);
     if (element !== null) {
         element.innerHTML = price.value;
-        fitText(element, 28); 
+        fitText(element, 20); 
     }
 });
 gigDateTime.addEventListener('input', function() {
